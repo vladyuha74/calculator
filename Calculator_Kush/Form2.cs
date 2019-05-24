@@ -18,29 +18,28 @@ namespace Calculator_Kush
         }
         public string s_ch1 = "";
         public string s_ch2 = "";
-        public string mathem = "";
         public string result = "";
         public bool stat = false;
 
         public void Matematic_Display() //  Метод для проверки что хотят сделать и вывести на экран результат
         {
-            decimal chislo1 = 0;
-            decimal chislo2 = 0;
-            decimal itog = 0;
+            double chislo1 = 0;
+            double chislo2 = 0;
+            double itog = 0;
             // Проверка что хотят сделать
             if (result == "+")
             {
 
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 + chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
 
             }
             if (result == "-")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 - chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
@@ -52,41 +51,41 @@ namespace Calculator_Kush
                 }
                 else
                 {
-                    chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                    chislo2 = Convert.ToDecimal(s_ch2);
+                    chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                    chislo2 = Convert.ToDouble(s_ch2);
                     itog = chislo1 / chislo2; // Вычисление 
                     textBox1.Text = Convert.ToString(itog);
                 }
             }
             if (result == "*")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 * chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
             if (result == "x^2") // Во втрой степени 1 число
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
                 itog = chislo1 * chislo1;
                 textBox1.Text = Convert.ToString(itog);
             }
             if (result == "√") //Корень квадратный из 1 числа
             {
-                chislo1 = Convert.ToDecimal(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
-                itog = Convert.ToDecimal(Math.Sqrt(Convert.ToDouble(chislo1))); // Переводим сначала в double для вычисления корня а потом итог переводим в decimal
+                chislo1 = Convert.ToDouble(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
+                itog = Math.Sqrt(chislo1); // Переводим сначала в double для вычисления корня а потом итог переводим в decimal
                 textBox1.Text = Convert.ToString(itog);
             }
             if (result == "1/x")
             {
-                chislo1 = Convert.ToDecimal(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
-                itog = Convert.ToDecimal(1 / chislo1);
+                chislo1 = Convert.ToDouble(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
+                itog = 1 / chislo1;
                 textBox1.Text = Convert.ToString(itog);
             }
             if(result == "x^y")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = 1;
                 for (int i=1; i <= chislo2; i++)
                 {
@@ -97,7 +96,7 @@ namespace Calculator_Kush
             }
             if (result == "n!")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
                 if (chislo1 != 0)
                 {
                     itog = 1;
@@ -112,10 +111,28 @@ namespace Calculator_Kush
                 }
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
-            if(result == "<x")
+            if(result == "sin")
+            {
+                chislo1 = Convert.ToDouble(s_ch1);
+                itog = Math.Sin(chislo1);
+                textBox1.Text = Convert.ToString(itog);
+            }
+            if (result == "cos")
+            {
+                chislo1 = Convert.ToDouble(s_ch1);
+                itog = Math.Cos(chislo1);
+                textBox1.Text = Convert.ToString(itog);
+            }
+            if (result == "tang")
+            {
+                chislo1 = Convert.ToDouble(s_ch1);
+                itog = Math.Tan(chislo1);
+                textBox1.Text = Convert.ToString(itog);
+            }
+            if (result == "<x")
             {
                 s_ch1 = s_ch1.Remove(s_ch1.Length - 1);
-                textBox1.Text = Convert.ToString(s_ch1);
+                textBox1.Text = Convert.ToString(s_ch1);   
             }
         }
 
@@ -145,25 +162,21 @@ namespace Calculator_Kush
                     result = "/";
                     break;
                 case 15:
-                    stat = true;
                     textBox1.Text = "";
                     result = "x^2";
                     Matematic_Display();
                     break;
                 case 16:
-                    stat = true;
                     textBox1.Text = "";
                     result = "√";
                     Matematic_Display();
                     break; 
                 case 20:
-                    stat = true;
                     textBox1.Text = "";
                     result = "1/x";
                     Matematic_Display();
                     break;
                 case 21:
-                    stat = true;
                     result = "<x";
                     Matematic_Display();
                     break;
@@ -173,9 +186,23 @@ namespace Calculator_Kush
                     result = "x^y";
                     break;
                 case 23:
-                    stat = true;
                     textBox1.Text = "";
                     result = "n!";
+                    Matematic_Display();
+                    break;
+                case 25:
+                    textBox1.Text = "";
+                    result = "sin";
+                    Matematic_Display();
+                    break;
+                case 26:
+                    textBox1.Text = "";
+                    result = "cos";
+                    Matematic_Display();
+                    break;
+                case 27:
+                    textBox1.Text = "";
+                    result = "tang";
                     Matematic_Display();
                     break;
             }
@@ -453,12 +480,35 @@ namespace Calculator_Kush
 
         }
 
+        private void button24_Click(object sender, EventArgs e) // Число пи
+        {
+            double pi = 3.14159265358979;
+            textBox1.Text = Convert.ToString(pi);
+        }
+
+        private void button25_Click(object sender, EventArgs e) // sin
+        {
+            int numb = 25;
+            Info(numb);
+        }
+
+        private void button26_Click(object sender, EventArgs e) // cos
+        {
+            int numb = 26;
+            Info(numb);
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            int numb = 27;
+            Info(numb);
+        }
+
         private void обычныйToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
             f1.Show();
             this.Visible = false;
-
         }
     }
 }

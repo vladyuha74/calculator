@@ -19,29 +19,28 @@ namespace Calculator_Kush
 
         public string s_ch1 = "";
         public string s_ch2 = "";
-        public decimal itog;
-        public string mathem = "";
         public string result = "";
         public bool stat = false;
 
         public void Matematic_Display() //  Метод для проверки что хотят сделать и вывести на экран результат
         {
-            decimal chislo1 = 0;
-            decimal chislo2 = 0;
+            double chislo1 = 0;
+            double chislo2 = 0;
+            double itog = 0;
             // Проверка что хотят сделать
             if (result == "+")
             {
 
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 + chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
 
             }
             if (result == "-")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 - chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
@@ -53,41 +52,41 @@ namespace Calculator_Kush
                 }
                 else 
                 {
-                    chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                    chislo2 = Convert.ToDecimal(s_ch2);
+                    chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                    chislo2 = Convert.ToDouble(s_ch2);
                     itog = chislo1 / chislo2; // Вычисление 
                     textBox1.Text = Convert.ToString(itog);
                 }
             }
             if (result == "*")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 * chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
             if (result == "^") // Во втрой степени 1 число
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
                 itog = chislo1 * chislo1;
                 textBox1.Text = Convert.ToString(itog);
             }
             if (result == "√") //Корень квадратный из 1 числа
             {
-                chislo1 = Convert.ToDecimal(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
-                itog = Convert.ToDecimal(Math.Sqrt(Convert.ToDouble(chislo1))); // Переводим сначала в double для вычисления корня а потом итог переводим в decimal
+                chislo1 = Convert.ToDouble(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
+                itog = Math.Sqrt(chislo1); // Переводим сначала в double для вычисления корня а потом итог переводим в decimal
                 textBox1.Text = Convert.ToString(itog);
             }
             if(result == "1/x")
             {
-                chislo1 = Convert.ToDecimal(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
-                itog = Convert.ToDecimal(1/chislo1); 
+                chislo1 = Convert.ToDouble(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
+                itog = Convert.ToDouble(1/chislo1); 
                 textBox1.Text = Convert.ToString(itog);
             }
             if (result == "x^y")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDecimal(s_ch2);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = 1;
                 for (int i = 1; i <= chislo2; i++)
                 {
@@ -98,7 +97,7 @@ namespace Calculator_Kush
             }
             if (result == "n!")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
                 if (chislo1 != 0)
                 {
                     itog = 1;

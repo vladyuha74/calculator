@@ -57,6 +57,9 @@
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -356,12 +359,45 @@
             // 
             // button24
             // 
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button24.Location = new System.Drawing.Point(3, 244);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(40, 59);
             this.button24.TabIndex = 25;
-            this.button24.Text = "24";
+            this.button24.Text = "π";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // button25
+            // 
+            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button25.Location = new System.Drawing.Point(6, 306);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(48, 23);
+            this.button25.TabIndex = 26;
+            this.button25.Text = "sin";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(6, 335);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(48, 23);
+            this.button26.TabIndex = 27;
+            this.button26.Text = "cos";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(60, 309);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(61, 23);
+            this.button27.TabIndex = 28;
+            this.button27.Text = "tan";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // Form2
             // 
@@ -369,6 +405,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 370);
             this.ControlBox = false;
+            this.Controls.Add(this.button27);
+            this.Controls.Add(this.button26);
+            this.Controls.Add(this.button25);
             this.Controls.Add(this.button24);
             this.Controls.Add(this.button23);
             this.Controls.Add(this.button22);
@@ -399,7 +438,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Внимание";
+            this.Text = "Калькулятор: ИНЖЕНЕРНЫЙ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -438,5 +477,8 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button27;
     }
 }

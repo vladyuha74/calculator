@@ -264,6 +264,7 @@
             this.textBox1.TabIndex = 18;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.UseWaitCursor = true;
             // 
             // button19
             // 
@@ -361,7 +362,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Калькулятор";
+            this.Text = "Калькулятор: ОБЫЧНЫЙ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
