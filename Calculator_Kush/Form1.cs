@@ -26,10 +26,8 @@ namespace Calculator_Kush
         public void Display() //  Метод для проверки что хотят сделать и вывести на экран результат
         {
             decimal chislo1 = 0;
-            double ch1 = 0;
             decimal chislo2 = 0;
             decimal itog = 0;
-            double itog1 = 0;
             // Проверка что хотят сделать
             if (result == "+")
             {
@@ -74,7 +72,12 @@ namespace Calculator_Kush
                 itog = Convert.ToDecimal(Math.Sqrt(Convert.ToDouble(chislo1))); // Переводим сначала в double для вычисления корня а потом итог переводим в decimal
                 textBox1.Text = Convert.ToString(itog);
             }
-
+            if(result == "1/x")
+            {
+                chislo1 = Convert.ToDecimal(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
+                itog = Convert.ToDecimal(1/chislo1); 
+                textBox1.Text = Convert.ToString(itog);
+            }
         }
 
         // Метод действий (+,-,/)
@@ -117,6 +120,13 @@ namespace Calculator_Kush
                 stat = true;
                 textBox1.Text = "";
                 result = "√";
+                Display();
+            }
+            if (nb == 20)
+            {
+                stat = true;
+                textBox1.Text = "";
+                result = "1/x";
                 Display();
             }
         }
@@ -361,6 +371,11 @@ namespace Calculator_Kush
         {
             Display();
         }
-        
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            int numb=20;
+            Info(numb);
+        }
     }
 }
