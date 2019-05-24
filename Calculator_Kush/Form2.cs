@@ -97,11 +97,18 @@ namespace Calculator_Kush
             }
             if (result == "n!")
             {
-                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                itog = 1;
-                for (int i=1; i<=chislo1; i++)
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
+                if (chislo1 != 0)
                 {
-                    itog = itog * i;
+                    itog = 1;
+                    for (int i = 1; i <= chislo1; i++)
+                    {
+                        itog = itog * i;
+                    }
+                }
+                else
+                {
+                    itog = 1;
                 }
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
@@ -155,6 +162,12 @@ namespace Calculator_Kush
                 textBox1.Text = "";
                 result = "1/x";
                 Display();
+            }
+            if (nb == 21)
+            {
+                stat = true;
+                textBox1.Text = "";
+                result = "<x";
             }
             if(nb == 22)
             {
@@ -215,7 +228,14 @@ namespace Calculator_Kush
                         textBox1.Text = s_ch1;
                         break;
                     case 0:
-                        s_ch1 = s_ch1 + Convert.ToString(nb);
+                        if (s_ch1 != "") // Условие для того чтобы ноль впереди не ставился
+                        {
+                            s_ch1 = s_ch1 + Convert.ToString(nb);
+                        }
+                        else
+                        {
+                            s_ch1 = "";
+                        }
                         textBox1.Text = s_ch1;
                         break;
                     case 17:
@@ -226,60 +246,59 @@ namespace Calculator_Kush
             }
             else
             {
-                if (nb == 1) // Проверка нажатия конкретной кнопки 
+                switch (nb)
                 {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 2) // Проверка нажатия конкретной кнопки 
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 3)
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 4) // Проверка нажатия конкретной кнопки 
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 5)
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 6) // Проверка нажатия конкретной кнопки 
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 7)
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 8) // Проверка нажатия конкретной кнопки 
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 9)
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 0) // Проверка нажатия конкретной кнопки 
-                {
-                    s_ch2 = s_ch2 + Convert.ToString(nb);
-                    textBox1.Text = s_ch2;
-                }
-                if (nb == 17)
-                {
-                    s_ch2 = s_ch2 + ",";
-                    textBox1.Text = s_ch2;
+                    case 1:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 2:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 3:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 4:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 5:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 6:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 7:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 8:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 9:
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 0:
+                        if(s_ch2 != "") // Условие для того чтобы ноль впереди не ставился
+                        {
+                            s_ch2 = s_ch2 + Convert.ToString(nb);
+                        }
+                        else
+                        {
+                            s_ch2 = "";
+                        }
+                        textBox1.Text = s_ch2;
+                        break;
+                    case 17:
+                        s_ch2 = s_ch2 + ",";
+                        textBox1.Text = s_ch2;
+                        break;
                 }
             }
         }
@@ -412,8 +431,8 @@ namespace Calculator_Kush
 
         private void button21_Click(object sender, EventArgs e) // <x
         {
-            //int numb = 21;
-           // Info(numb);
+            int numb = 21;
+            Info(numb);
         }
 
         private void button22_Click(object sender, EventArgs e) // x^y
