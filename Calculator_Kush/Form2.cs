@@ -22,7 +22,7 @@ namespace Calculator_Kush
         public string result = "";
         public bool stat = false;
 
-        public void Display() //  Метод для проверки что хотят сделать и вывести на экран результат
+        public void Matematic_Display() //  Метод для проверки что хотят сделать и вывести на экран результат
         {
             decimal chislo1 = 0;
             decimal chislo2 = 0;
@@ -112,75 +112,72 @@ namespace Calculator_Kush
                 }
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
+            if(result == "<x")
+            {
+                s_ch1 = s_ch1.Remove(s_ch1.Length - 1);
+                textBox1.Text = Convert.ToString(s_ch1);
+            }
         }
 
-        // Метод действий (+,-,/)
+        // Метод действий которая нажата кнопка (+,-,/,x^2,√,1/x,x^y,n!,<x)
         public void Info(int nb)
         {
-            if (nb == 11)// Условие для выбора действия (+,-,/)
+            switch (nb) // Выбор действия
             {
-                stat = true; // Индекс который открывает доступ к заполнению второго числа
-                textBox1.Text = ""; // Очистка заполнения первого числа
-                result = "+";
-
-            }
-            if (nb == 12)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "-";
-            }
-            if (nb == 13)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "*";
-            }
-            if (nb == 14)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "/";
-            }
-            if (nb == 15)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "x^2";
-                Display();
-            }
-            if (nb == 16)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "√";
-                Display();
-            }
-            if (nb == 20)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "1/x";
-                Display();
-            }
-            if (nb == 21)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "<x";
-            }
-            if(nb == 22)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "x^y";
-            }
-            if (nb == 23)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "n!";
-                Display();
+                case 11:
+                    stat = true; // Индекс который открывает доступ к заполнению второго числа
+                    textBox1.Text = ""; // Очистка заполнения первого числа
+                    result = "+";
+                    break;
+                case 12:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "-";
+                    break;
+                case 13:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "*";
+                    break;
+                case 14:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "/";
+                    break;
+                case 15:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "x^2";
+                    Matematic_Display();
+                    break;
+                case 16:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "√";
+                    Matematic_Display();
+                    break; 
+                case 20:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "1/x";
+                    Matematic_Display();
+                    break;
+                case 21:
+                    stat = true;
+                    result = "<x";
+                    Matematic_Display();
+                    break;
+                case 22:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "x^y";
+                    break;
+                case 23:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "n!";
+                    Matematic_Display();
+                    break;
             }
         }
 
@@ -320,49 +317,57 @@ namespace Calculator_Kush
         private void button3_Click(object sender, EventArgs e)
         {
             int numb = 3; // Номер кнопки
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             int numb = 4; // Номер кнопки
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             int numb = 5; // Номер кнопки
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             int numb = 6;
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             int numb = 7; // Номер кнопки
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             int numb = 8; // Номер кнопки
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             int numb = 9;// Номер кнопки
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             int numb = 0;// Номер кнопки
-            Chislo(numb);
+            Form1 f1 = new Form1();
+            f1.Chislo(numb);
         }
 
         private void button11_Click(object sender, EventArgs e) // +
@@ -393,7 +398,7 @@ namespace Calculator_Kush
         {
             int numb = 15; // Номер кнопки
             Info(numb);
-            Display();
+            Matematic_Display();
         }
 
         private void button16_Click(object sender, EventArgs e) // √
@@ -420,7 +425,7 @@ namespace Calculator_Kush
 
         private void button19_Click(object sender, EventArgs e) // Вывод 
         {
-            Display();
+            Matematic_Display();
         }
 
         private void button20_Click(object sender, EventArgs e) // (1/х)

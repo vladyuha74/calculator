@@ -19,15 +19,15 @@ namespace Calculator_Kush
 
         public string s_ch1 = "";
         public string s_ch2 = "";
+        public decimal itog;
         public string mathem = "";
         public string result = "";
         public bool stat = false;
 
-        public void Display() //  Метод для проверки что хотят сделать и вывести на экран результат
+        public void Matematic_Display() //  Метод для проверки что хотят сделать и вывести на экран результат
         {
             decimal chislo1 = 0;
             decimal chislo2 = 0;
-            decimal itog = 0;
             // Проверка что хотят сделать
             if (result == "+")
             {
@@ -84,56 +84,101 @@ namespace Calculator_Kush
                 itog = Convert.ToDecimal(1/chislo1); 
                 textBox1.Text = Convert.ToString(itog);
             }
+            if (result == "x^y")
+            {
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDecimal(s_ch2);
+                itog = 1;
+                for (int i = 1; i <= chislo2; i++)
+                {
+                    itog = itog * chislo1;
+                }
+                // itog = chislo1 * chislo2; // Вычисление 
+                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
+            }
+            if (result == "n!")
+            {
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
+                if (chislo1 != 0)
+                {
+                    itog = 1;
+                    for (int i = 1; i <= chislo1; i++)
+                    {
+                        itog = itog * i;
+                    }
+                }
+                else
+                {
+                    itog = 1;
+                }
+                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
+            }
+            if (result == "<x")
+            {
+                s_ch1 = s_ch1.Remove(s_ch1.Length - 1);
+                textBox1.Text = Convert.ToString(s_ch1);
+            }
         }
 
         // Метод действий (+,-,/)
         public void Info(int nb) 
         {
-            if (nb == 11)// Условие для выбора действия (+,-,/)
+           switch (nb) // Выбор действия
             {
-                stat = true; // Индекс который открывает доступ к заполнению второго числа
-                textBox1.Text = ""; // Очистка заполнения первого числа
-                result = "+";
-
-            }
-            if (nb == 12)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "-";
-            }
-            if (nb == 13)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "*";
-            }
-            if (nb == 14)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "/";
-            }
-            if (nb == 15)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "^";
-                Display();
-            }
-            if (nb == 16)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "√";
-                Display();
-            }
-            if (nb == 20)
-            {
-                stat = true;
-                textBox1.Text = "";
-                result = "1/x";
-                Display();
+                case 11:
+                    stat = true; // Индекс который открывает доступ к заполнению второго числа
+                    textBox1.Text = ""; // Очистка заполнения первого числа
+                    result = "+";
+                    break;
+                case 12:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "-";
+                    break;
+                case 13:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "*";
+                    break;
+                case 14:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "/";
+                    break;
+                case 15:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "x^2";
+                    Matematic_Display();
+                    break;
+                case 16:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "√";
+                    Matematic_Display();
+                    break;
+                case 20:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "1/x";
+                    Matematic_Display();
+                    break;
+                case 21:
+                    stat = true;
+                    result = "<x";
+                    Matematic_Display();
+                    break;
+                case 22:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "x^y";
+                    break;
+                case 23:
+                    stat = true;
+                    textBox1.Text = "";
+                    result = "n!";
+                    Matematic_Display();
+                    break;
             }
         }
 
@@ -375,12 +420,18 @@ namespace Calculator_Kush
 
         private void button19_Click(object sender, EventArgs e)
         {
-            Display();
+            Matematic_Display();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
             int numb=20;
+            Info(numb);
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            int numb = 21;
             Info(numb);
         }
 

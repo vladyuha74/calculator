@@ -203,7 +203,7 @@
             // обычныйToolStripMenuItem
             // 
             this.обычныйToolStripMenuItem.Name = "обычныйToolStripMenuItem";
-            this.обычныйToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.обычныйToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.обычныйToolStripMenuItem.Text = "Обычный";
             this.обычныйToolStripMenuItem.Click += new System.EventHandler(this.обычныйToolStripMenuItem_Click);
             // 
@@ -220,6 +220,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(315, 26);
             this.textBox1.TabIndex = 12;
+            this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button12
