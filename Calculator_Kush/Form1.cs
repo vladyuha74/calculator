@@ -25,50 +25,53 @@ namespace Calculator_Kush
 
         public void Display() //  Метод для проверки что хотят сделать и вывести на экран результат
         {
-            double chislo1 = 0;
-            double chislo2 = 0;
-            double itog = 0;
+            decimal chislo1 = 0;
+            double ch1 = 0;
+            decimal chislo2 = 0;
+            decimal itog = 0;
+            double itog1 = 0;
             // Проверка что хотят сделать
             if (result == "+")
             {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDouble(s_ch2);
+
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDecimal(s_ch2);
                 itog = chislo1 + chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
 
             }
             if (result == "-")
             {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDouble(s_ch2);
-                itog = chislo1 - chislo2;
-                textBox1.Text = Convert.ToString(itog);
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDecimal(s_ch2);
+                itog = chislo1 - chislo2; // Вычисление 
+                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
             if (result == "/")
             {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDouble(s_ch2);
-                itog = chislo1 / chislo2;
-                textBox1.Text = Convert.ToString(itog);
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDecimal(s_ch2);
+                itog = chislo1 / chislo2; // Вычисление 
+                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
 
             }
             if (result == "*")
             {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDouble(s_ch2);
-                itog = chislo1 * chislo2;
-                textBox1.Text = Convert.ToString(itog);
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDecimal(s_ch2);
+                itog = chislo1 * chislo2; // Вычисление 
+                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
             if (result == "^") // Во втрой степени 1 число
             {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
+                chislo1 = Convert.ToDecimal(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
                 itog = chislo1 * chislo1;
                 textBox1.Text = Convert.ToString(itog);
             }
             if (result == "√") //Корень квадратный из 1 числа
             {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
-                itog = Math.Sqrt(chislo1);
+                chislo1 = Convert.ToDecimal(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
+                itog = Convert.ToDecimal(Math.Sqrt(Convert.ToDouble(chislo1))); // Переводим сначала в double для вычисления корня а потом итог переводим в decimal
                 textBox1.Text = Convert.ToString(itog);
             }
 
@@ -116,7 +119,6 @@ namespace Calculator_Kush
                 result = "√";
                 Display();
             }
-
         }
 
         // Метод для заполнения чисел
