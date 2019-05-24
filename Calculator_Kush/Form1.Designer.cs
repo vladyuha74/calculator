@@ -215,7 +215,7 @@
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button15.Location = new System.Drawing.Point(174, 56);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(72, 24);
+            this.button15.Size = new System.Drawing.Size(72, 23);
             this.button15.TabIndex = 14;
             this.button15.Text = "x^2";
             this.button15.UseVisualStyleBackColor = true;
@@ -304,13 +304,14 @@
             this.инжToolStripMenuItem.Name = "инжToolStripMenuItem";
             this.инжToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.инжToolStripMenuItem.Text = "Инженерный";
+            this.инжToolStripMenuItem.Click += new System.EventHandler(this.инжToolStripMenuItem_Click);
             // 
             // button20
             // 
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button20.Location = new System.Drawing.Point(252, 57);
+            this.button20.Location = new System.Drawing.Point(250, 56);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(72, 23);
+            this.button20.Size = new System.Drawing.Size(74, 23);
             this.button20.TabIndex = 21;
             this.button20.Text = "1/х";
             this.button20.UseVisualStyleBackColor = true;
@@ -321,7 +322,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 370);
-            this.ControlBox = false;
             this.Controls.Add(this.button20);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.textBox1);
@@ -344,7 +344,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
