@@ -28,39 +28,59 @@ namespace Calculator_Kush
             double chislo1 = 0;
             double chislo2 = 0;
             double itog = 0;
-            chislo1 = Convert.ToDouble(s_ch1);
-            chislo2 = Convert.ToDouble(s_ch2);
             // Проверка что хотят сделать
             if (result == "+")
             {
-                itog = chislo1 + chislo2;
-                textBox1.Text = Convert.ToString(itog);
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
+                itog = chislo1 + chislo2; // Вычисление 
+                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
 
             }
             if (result == "-")
             {
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 - chislo2;
                 textBox1.Text = Convert.ToString(itog);
             }
             if (result == "/")
             {
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 / chislo2;
                 textBox1.Text = Convert.ToString(itog);
 
             }
             if (result == "*")
             {
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
+                chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 * chislo2;
                 textBox1.Text = Convert.ToString(itog);
             }
+            if (result == "^") // Во втрой степени 1 число
+            {
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
+                itog = chislo1 * chislo1;
+                textBox1.Text = Convert.ToString(itog);
+            }
+            if (result == "√") //Корень квадратный из 1 числа
+            {
+                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
+                itog = Math.Sqrt(chislo1);
+                textBox1.Text = Convert.ToString(itog);
+            }
+
         }
 
-        public void Info(int nb) // Объявление действия которое будет производиться (+,-,/)
+        // Метод действий (+,-,/)
+        public void Info(int nb) 
         {
-            if (nb == 11)
+            if (nb == 11)// Условие для выбора действия (+,-,/)
             {
-                stat = true;
-                textBox1.Text = "";
+                stat = true; // Индекс который открывает доступ к заполнению второго числа
+                textBox1.Text = ""; // Очистка заполнения первого числа
                 result = "+";
 
             }
@@ -82,12 +102,27 @@ namespace Calculator_Kush
                 textBox1.Text = "";
                 result = "/";
             }
+            if (nb == 15)
+            {
+                stat = true;
+                textBox1.Text = "";
+                result = "^";
+                Display();
+            }
+            if (nb == 16)
+            {
+                stat = true;
+                textBox1.Text = "";
+                result = "√";
+                Display();
+            }
+
         }
 
-
-        public void Chislo(int nb)
+        // Метод для заполнения чисел
+        public void Chislo(int nb) 
         {
-            if(stat == false)
+            if(stat == false) // Условие на выбор числа для заполнения.
             {
                 if (nb == 1) // Проверка нажатия конкретной кнопки 
                 {
@@ -140,7 +175,7 @@ namespace Calculator_Kush
                     textBox1.Text = s_ch1;
 
                 }
-                if (nb == 16)
+                if (nb == 17)
                 {
                     s_ch1 = s_ch1 + ",";
                     textBox1.Text = s_ch1;
@@ -198,7 +233,7 @@ namespace Calculator_Kush
                     s_ch2 = s_ch2 + Convert.ToString(nb);
                     textBox1.Text = s_ch2;
                 }
-                if (nb == 16)
+                if (nb == 17)
                 {
                     s_ch2 = s_ch2 + ",";
                     textBox1.Text = s_ch2;
@@ -206,140 +241,12 @@ namespace Calculator_Kush
             }
         }
 
-
-        public void Infomation_btn_click1(int nb)
-        {
-            if (nb == 1) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 2) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 3)
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 4) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 5)
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 6) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 7)
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 8) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 9)
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-            }
-            if (nb == 0) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch1 = s_ch1 + Convert.ToString(nb);
-                textBox1.Text = s_ch1;
-
-            }
-            if (nb == 16)
-            {
-                s_ch1 = s_ch1 + ",";
-                textBox1.Text = s_ch1;
-            }
-        }
-
-        public void Infomation_btn_click2(int nb)
-        {
-            if (nb == 1) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 2) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 3)
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 4) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 5)
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 6) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 7)
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 8) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 9)
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 0) // Проверка нажатия конкретной кнопки 
-            {
-                s_ch2 = s_ch2 + Convert.ToString(nb);
-                textBox1.Text = s_ch2;
-            }
-            if (nb == 16)
-            {
-                s_ch2 = s_ch2 + ",";
-                textBox1.Text = s_ch2;
-            }
-        }
-
+        // Управление кнопок 
         private void button1_Click(object sender, EventArgs e)
         {
             // Переменые кторые фиксирует нажата кнопка или нет.
             int numb = 1; // Номер кнопки
-            Info(numb);
             Chislo(numb);
-            //if (stat == false)
-           // {
-           //     Infomation_btn_click1(numb);
-          //  }
-            //if (stat == true)
-          //  {
-           //     Infomation_btn_click2(numb);
-           // }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -422,26 +329,36 @@ namespace Calculator_Kush
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Display();
+            int numb = 15; // Номер кнопки
+            Info(numb);
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             int numb = 16;// Номер кнопки
-            Chislo(numb);
+            Info(numb);
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            s_ch1 = "";
-            s_ch2 = "";
-            textBox1.Text = "";
-            stat = false;
+            //Сброс всех настроек для ввода новых двух чисел
+            int numb = 17;// Номер кнопки
+            Chislo(numb);
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-
+            s_ch1 = "";
+            s_ch2 = "";
+            textBox1.Text = "";
+            
+            stat = false;
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            Display();
+        }
+        
     }
 }
