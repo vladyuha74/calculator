@@ -29,12 +29,10 @@ namespace Calculator_Kush
             // Проверка что хотят сделать
             if (result == "+")
             {
-
                 chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
                 chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 + chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
-
             }
             if (result == "-")
             {
@@ -488,5 +486,21 @@ namespace Calculator_Kush
             f1.Show();
             this.Visible = false;
         }
+
+        private void инженерныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            this.Visible = false;
+        }
+
+        private void единицыИзмеренияДлиныToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+            this.Visible = false;
+        }
+
+
     }
 }

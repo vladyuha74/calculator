@@ -60,6 +60,7 @@
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
+            this.единицыИзмеренияДлиныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,7 +199,8 @@
             // 
             this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.обычныйToolStripMenuItem,
-            this.инженерныйToolStripMenuItem});
+            this.инженерныйToolStripMenuItem,
+            this.единицыИзмеренияДлиныToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
             this.видToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.видToolStripMenuItem.Text = "Вид";
@@ -206,15 +208,16 @@
             // обычныйToolStripMenuItem
             // 
             this.обычныйToolStripMenuItem.Name = "обычныйToolStripMenuItem";
-            this.обычныйToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.обычныйToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.обычныйToolStripMenuItem.Text = "Обычный";
             this.обычныйToolStripMenuItem.Click += new System.EventHandler(this.обычныйToolStripMenuItem_Click);
             // 
             // инженерныйToolStripMenuItem
             // 
             this.инженерныйToolStripMenuItem.Name = "инженерныйToolStripMenuItem";
-            this.инженерныйToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.инженерныйToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.инженерныйToolStripMenuItem.Text = "Инженерный";
+            this.инженерныйToolStripMenuItem.Click += new System.EventHandler(this.инженерныйToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -399,6 +402,13 @@
             this.button27.UseVisualStyleBackColor = true;
             this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
+            // единицыИзмеренияДлиныToolStripMenuItem
+            // 
+            this.единицыИзмеренияДлиныToolStripMenuItem.Name = "единицыИзмеренияДлиныToolStripMenuItem";
+            this.единицыИзмеренияДлиныToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.единицыИзмеренияДлиныToolStripMenuItem.Text = "Длина";
+            this.единицыИзмеренияДлиныToolStripMenuItem.Click += new System.EventHandler(this.единицыИзмеренияДлиныToolStripMenuItem_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,5 +490,6 @@
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.ToolStripMenuItem единицыИзмеренияДлиныToolStripMenuItem;
     }
 }

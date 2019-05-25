@@ -30,12 +30,10 @@ namespace Calculator_Kush
             // Проверка что хотят сделать
             if (result == "+")
             {
-
                 chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
                 chislo2 = Convert.ToDouble(s_ch2);
                 itog = chislo1 + chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
-
             }
             if (result == "-")
             {
@@ -328,6 +326,7 @@ namespace Calculator_Kush
         {
             int numb = 9;// Номер кнопки
             Chislo(numb);
+            button21.Enabled = false;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -409,6 +408,21 @@ namespace Calculator_Kush
         {
             Form2 f2 = new Form2();
             f2.Show();
+            this.Visible = false;
+        }
+
+
+        private void обычныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
+            this.Visible = false;
+        }
+
+        private void единицыИзмеренияДлиныToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
             this.Visible = false;
         }
     }
