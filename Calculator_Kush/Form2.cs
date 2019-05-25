@@ -252,14 +252,7 @@ namespace Calculator_Kush
                         textBox1.Text = s_ch1;
                         break;
                     case 0:
-                        if (s_ch1 != "") // Условие для того чтобы ноль впереди не ставился
-                        {
-                            s_ch1 = s_ch1 + Convert.ToString(nb);
-                        }
-                        else
-                        {
-                            s_ch1 = "";
-                        }
+                        s_ch1 = s_ch1 + Convert.ToString(nb);
                         textBox1.Text = s_ch1;
                         break;
                     case 17:
@@ -309,14 +302,7 @@ namespace Calculator_Kush
                         textBox1.Text = s_ch2;
                         break;
                     case 0:
-                        if(s_ch2 != "") // Условие для того чтобы ноль впереди не ставился
-                        {
-                            s_ch2 = s_ch2 + Convert.ToString(nb);
-                        }
-                        else
-                        {
-                            s_ch2 = "";
-                        }
+                        s_ch2 = s_ch2 + Convert.ToString(nb);
                         textBox1.Text = s_ch2;
                         break;
                     case 17:
@@ -344,57 +330,49 @@ namespace Calculator_Kush
         private void button3_Click(object sender, EventArgs e)
         {
             int numb = 3; // Номер кнопки
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             int numb = 4; // Номер кнопки
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             int numb = 5; // Номер кнопки
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             int numb = 6;
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             int numb = 7; // Номер кнопки
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             int numb = 8; // Номер кнопки
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             int numb = 9;// Номер кнопки
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             int numb = 0;// Номер кнопки
-            Form1 f1 = new Form1();
-            f1.Chislo(numb);
+            Chislo(numb);
         }
 
         private void button11_Click(object sender, EventArgs e) // +

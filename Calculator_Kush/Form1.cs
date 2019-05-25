@@ -65,7 +65,7 @@ namespace Calculator_Kush
                 itog = chislo1 * chislo2; // Вычисление 
                 textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
-            if (result == "^") // Во втрой степени 1 число
+            if (result == "x^2") // Во втрой степени 1 число
             {
                 chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число  
                 itog = chislo1 * chislo1;
@@ -82,35 +82,6 @@ namespace Calculator_Kush
                 chislo1 = Convert.ToDouble(s_ch1);// Переводим все числа которые были записаны в 1 строку в число
                 itog = Convert.ToDouble(1/chislo1); 
                 textBox1.Text = Convert.ToString(itog);
-            }
-            if (result == "x^y")
-            {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число 
-                chislo2 = Convert.ToDouble(s_ch2);
-                itog = 1;
-                for (int i = 1; i <= chislo2; i++)
-                {
-                    itog = itog * chislo1;
-                }
-                // itog = chislo1 * chislo2; // Вычисление 
-                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
-            }
-            if (result == "n!")
-            {
-                chislo1 = Convert.ToDouble(s_ch1); // Переводим все числа которые были записаны в 1 строку в число
-                if (chislo1 != 0)
-                {
-                    itog = 1;
-                    for (int i = 1; i <= chislo1; i++)
-                    {
-                        itog = itog * i;
-                    }
-                }
-                else
-                {
-                    itog = 1;
-                }
-                textBox1.Text = Convert.ToString(itog); // Вывод на экран в textBox1
             }
             if (result == "<x")
             {
